@@ -16,6 +16,12 @@ HEADERS += \
     cvgraphicsview.h \
     widgets_global.h
 
+# 3rdparty
+{
+    # opencv
+    include($$PWD/../3rdparty/opencv/opencv.pri)
+}
+
 # 设置输出文件名
 TARGET = widgets
 
