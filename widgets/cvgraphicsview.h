@@ -14,15 +14,19 @@ public:
 
     void showImage(QString path);
 
+    void showImage(cv::Mat img);
+
     cv::Mat getMat() const;
 
 protected:
 
 
 private:
-    QPixmap pixmap_;
+    cv::Mat img_;
 
-    cv::Mat mat_;
+    bool is_init{false};
+
+    QGraphicsPixmapItem *image_pixmap_{nullptr};
 
 signals:
 
