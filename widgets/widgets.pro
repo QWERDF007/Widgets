@@ -16,16 +16,23 @@ HEADERS += \
     cvgraphicsview.h \
     widgets_global.h
 
-
 # 设置输出文件名
 TARGET = widgets
 
-# Default rules for deployment.
+# 设置编译输出目录
+_BUILD_DIR = $$(BUILD_DIR)
+
 unix {
     target.path = /usr/lib
+
     # 设置输出目录
-    DESTDIR = $$PWD/../build/linux
-}
+    isEmpty(_BUILD_DIR){
+        DESTDIR = $$PWD/../build/linux
+    } else {
+        DESTDIR = $$(BUILD_DIR)/linux
+    }
+
+} # unix
 !isEmpty(target.path): INSTALLS += target
 
 
@@ -33,7 +40,11 @@ win32 {
 win32-msvc {
 
     # 设置输出目录
-    DESTDIR = $$PWD/../build/windows
+    isEmpty(_BUILD_DIR){
+        DESTDIR = $$PWD/../build/windows
+    } else {
+        DESTDIR = $$(BUILD_DIR)/windows
+    }
 
     CONFIG(release, debug|release) {
     }
@@ -44,3 +55,5 @@ win32-msvc {
 
 } # msvc
 } # win
+
+message('$$TARGET build on $$DESTDIR')
