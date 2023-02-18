@@ -3,6 +3,8 @@
 
 #include <QGraphicsView>
 #include <QPixmap>
+#include <QMouseEvent>
+#include <QDragEnterEvent>
 #include <opencv2/opencv.hpp>
 #include "widgets_global.h"
 
@@ -19,12 +21,10 @@ public:
     cv::Mat getMat() const;
 
 protected:
-
+    void dragEnterEvent(QDragEnterEvent *event) override;
 
 private:
     cv::Mat img_;
-
-    bool is_init{false};
 
     QGraphicsPixmapItem *image_pixmap_{nullptr};
 
