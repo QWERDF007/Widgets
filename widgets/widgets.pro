@@ -11,10 +11,12 @@ CONFIG += c++17
 
 SOURCES += \
     cvpixmapitem.cpp \
+    labelscene.cpp \
     labelview.cpp
 
 HEADERS += \
     cvpixmapitem.h \
+    labelscene.h \
     labelview.h \
     widgets_global.h
 
