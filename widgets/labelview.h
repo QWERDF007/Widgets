@@ -1,5 +1,5 @@
-#ifndef CVVIEW_H
-#define CVVIEW_H
+#ifndef LABELVIEW_H
+#define LABELVIEW_H
 
 #include <QGraphicsView>
 #include <opencv2/opencv.hpp>
@@ -21,4 +21,4 @@ signals:
 
 };
 
-#endif // CVVIEW_H
+#endif // LABELVIEW_H

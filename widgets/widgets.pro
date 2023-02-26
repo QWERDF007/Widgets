@@ -11,11 +11,11 @@ CONFIG += c++17
 
 SOURCES += \
     cvpixmapitem.cpp \
-    cvview.cpp
+    labelview.cpp
 
 HEADERS += \
     cvpixmapitem.h \
-    cvview.h \
+    labelview.h \
     widgets_global.h
 
 # 3rdparty
